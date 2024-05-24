@@ -43,10 +43,11 @@ require("lazy").setup(
     "equalsraf/neovim-gui-shim",
     "github/copilot.vim",
     "nvim-tree/nvim-web-devicons",
-    "lewis6991/gitsigns.nvim"
+    "lewis6991/gitsigns.nvim",
+    "pocco81/auto-save.nvim"
   }
 )
-
+require("auto-save").setup()
 require("ibl").setup()
 require("gitsigns").setup()
 require("plugin-configs.nvim-tree")
