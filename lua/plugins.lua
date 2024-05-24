@@ -20,6 +20,7 @@ require("lazy").setup(
     {"neoclide/coc.nvim", branch = "release"},
     {"akinsho/toggleterm.nvim", version = "*", config = true},
     {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
+    {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
     {
       "ibhagwan/fzf-lua",
       -- optional for icon support
@@ -56,3 +57,4 @@ require("plugin-configs.formatter-nvim")
 require("plugin-configs.coc")
 require("plugin-configs.toggleterm")
 require("plugin-configs.leap")
+require("plugin-configs.bufferline")
