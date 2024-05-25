@@ -46,15 +46,31 @@ require("lazy").setup(
     "nvim-tree/nvim-web-devicons",
     "lewis6991/gitsigns.nvim",
     "pocco81/auto-save.nvim",
-    "ggandor/leap.nvim"
+    "ggandor/leap.nvim",
+    {
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      config = function()
+        local configs = require("nvim-treesitter.configs")
+
+        configs.setup(
+          {
+            ensure_installed = {"c", "lua", "vim", "vimdoc", "rust", "python", "javascript", "html"},
+            sync_install = false,
+            highlight = {enable = true},
+            indent = {enable = true}
+          }
+        )
+      end
+    }
   }
 )
 require("auto-save").setup()
 require("ibl").setup()
-require("gitsigns").setup()
 require("plugin-configs.nvim-tree")
 require("plugin-configs.formatter-nvim")
 require("plugin-configs.coc")
 require("plugin-configs.toggleterm")
 require("plugin-configs.leap")
 require("plugin-configs.bufferline")
+require("plugin-configs.gitsigns")

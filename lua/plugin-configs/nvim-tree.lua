@@ -22,3 +22,7 @@ require("nvim-tree").setup(
     }
   }
 )
+
+local api = require("nvim-tree.api")
+vim.keymap.set("n", "<C-t>", api.tree.toggle, opts)
+vim.keymap.set("n", "<Leader>loc", api.tree.find_file, opts)
