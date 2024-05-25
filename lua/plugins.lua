@@ -46,6 +46,8 @@ require("lazy").setup(
     "lewis6991/gitsigns.nvim",
     "pocco81/auto-save.nvim",
     "ggandor/leap.nvim",
+    "ahmedkhalf/project.nvim",
+    "nvim-lua/plenary.nvim",
     {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
@@ -61,6 +63,12 @@ require("lazy").setup(
           }
         )
       end
+    },
+    {
+      "nvim-telescope/telescope.nvim",
+      tag = "0.1.6",
+      -- or                              , branch = '0.1.x',
+      dependencies = {"nvim-lua/plenary.nvim"}
     }
   }
 )
@@ -74,3 +82,4 @@ require("plugin-configs.leap")
 require("plugin-configs.bufferline")
 require("plugin-configs.gitsigns")
 require("plugin-configs.fzf-lua")
+require("plugin-configs.project")
