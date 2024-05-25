@@ -149,6 +149,7 @@ keyset("n", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
 keyset("x", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
 
 vim.api.nvim_create_user_command("FormatCoc", "call CocAction('format')", {})
+keyset("n", "<leader>fc", ":FormatCoc<CR>", {silent = true})
 -- " Add `:Fold` command to fold current buffer
 vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", {nargs = "?"})
 

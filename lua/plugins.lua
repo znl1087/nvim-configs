@@ -26,8 +26,7 @@ require("lazy").setup(
       -- optional for icon support
       dependencies = {"nvim-tree/nvim-web-devicons"},
       config = function()
-        -- calling `setup` is optional for customization
-        require("fzf-lua").setup({})
+        require("fzf-lua").setup {}
       end
     },
     {
@@ -74,3 +73,4 @@ require("plugin-configs.toggleterm")
 require("plugin-configs.leap")
 require("plugin-configs.bufferline")
 require("plugin-configs.gitsigns")
+require("plugin-configs.fzf-lua")
