@@ -21,22 +21,11 @@ require("lazy").setup(
     {"akinsho/toggleterm.nvim", version = "*", config = true},
     {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
     {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
-    {
-      "ibhagwan/fzf-lua",
-      -- optional for icon support
-      dependencies = {"nvim-tree/nvim-web-devicons"},
-      config = function()
-        require("fzf-lua").setup {}
-      end
-    },
-    {
-      "nvimdev/dashboard-nvim",
-      event = "VimEnter",
-      config = function()
-        require("dashboard").setup {}
-      end,
-      dependencies = {{"nvim-tree/nvim-web-devicons"}}
-    },
+    {"ibhagwan/fzf-lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
+    {"nvimdev/dashboard-nvim", event = "VimEnter", dependencies = {{"nvim-tree/nvim-web-devicons"}}},
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    {"nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = {"nvim-lua/plenary.nvim"}},
+    {"nvim-lualine/lualine.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}},
     "nvim-tree/nvim-tree.lua",
     "tanvirtin/monokai.nvim",
     "mhartington/formatter.nvim",
@@ -48,28 +37,6 @@ require("lazy").setup(
     "ggandor/leap.nvim",
     "ahmedkhalf/project.nvim",
     "nvim-lua/plenary.nvim",
-    {
-      "nvim-treesitter/nvim-treesitter",
-      build = ":TSUpdate",
-      config = function()
-        local configs = require("nvim-treesitter.configs")
-
-        configs.setup(
-          {
-            ensure_installed = {"c", "lua", "vim", "vimdoc", "rust", "python", "javascript", "html"},
-            sync_install = false,
-            highlight = {enable = true},
-            indent = {enable = true}
-          }
-        )
-      end
-    },
-    {
-      "nvim-telescope/telescope.nvim",
-      tag = "0.1.6",
-      -- or                              , branch = '0.1.x',
-      dependencies = {"nvim-lua/plenary.nvim"}
-    }
   }
 )
 require("auto-save").setup()
@@ -83,3 +50,7 @@ require("plugin-configs.bufferline")
 require("plugin-configs.gitsigns")
 require("plugin-configs.fzf-lua")
 require("plugin-configs.project")
+require("plugin-configs.lualine")
+require("plugin-configs.dashboard-nvim")
+require("plugin-configs.treesitter")
+require("plugin-configs.telescope")
