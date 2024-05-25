@@ -40,7 +40,6 @@ require("lazy").setup(
   }
 )
 require("auto-save").setup()
-require("ibl").setup()
 require("plugin-configs.nvim-tree")
 require("plugin-configs.formatter-nvim")
 require("plugin-configs.coc")
@@ -54,3 +53,4 @@ require("plugin-configs.lualine")
 require("plugin-configs.dashboard-nvim")
 require("plugin-configs.treesitter")
 require("plugin-configs.telescope")
+require("plugin-configs.ibl")
