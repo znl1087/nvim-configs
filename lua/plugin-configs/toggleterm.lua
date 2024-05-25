@@ -6,6 +6,7 @@ function _powershell_toggle()
 -- 获取当前目录
   local cwd = vim.fn.getcwd()
 
+
   -- 检查是否已经有一个终端在当前目录下运行
   if term_table[cwd] then
     term_table[cwd]:toggle()
