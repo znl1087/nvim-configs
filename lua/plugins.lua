@@ -33,6 +33,13 @@ require("lazy").setup(
       version = "^4", -- Recommended
       lazy = false -- This plugin is already lazy
     },
+    {
+      "MaximilianLloyd/ascii.nvim",
+      requires = {
+        "MunifTanjim/nui.nvim"
+      }
+    },
+    "MunifTanjim/nui.nvim",
     -- {
     --   "startup-nvim/startup.nvim",
     --   requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
