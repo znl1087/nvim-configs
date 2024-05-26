@@ -26,6 +26,7 @@ require("lazy").setup(
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = {"nvim-lua/plenary.nvim"}},
     {"nvim-lualine/lualine.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}},
+    {"numToStr/Comment.nvim", opts = {}, lazy = false},
     "nvim-tree/nvim-tree.lua",
     "tanvirtin/monokai.nvim",
     "mhartington/formatter.nvim",
@@ -37,6 +38,7 @@ require("lazy").setup(
     "ggandor/leap.nvim",
     "ahmedkhalf/project.nvim",
     "nvim-lua/plenary.nvim",
+    "tpope/vim-fugitive"
   }
 )
 require("auto-save").setup()
@@ -54,3 +56,4 @@ require("plugin-configs.dashboard-nvim")
 require("plugin-configs.treesitter")
 require("plugin-configs.telescope")
 require("plugin-configs.ibl")
+require("plugin-configs.comment")
