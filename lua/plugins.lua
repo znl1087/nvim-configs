@@ -38,6 +38,7 @@ require("lazy").setup(
     "ggandor/leap.nvim",
     "ahmedkhalf/project.nvim",
     "nvim-lua/plenary.nvim",
+    "tpope/vim-surround",
     "tpope/vim-fugitive"
   }
 )
