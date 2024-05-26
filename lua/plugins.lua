@@ -25,8 +25,14 @@ require("lazy").setup(
     {"nvimdev/dashboard-nvim", event = "VimEnter", dependencies = {{"nvim-tree/nvim-web-devicons"}}},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = {"nvim-lua/plenary.nvim"}},
+    {"smartpde/telescope-recent-files"},
     {"nvim-lualine/lualine.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}},
     {"numToStr/Comment.nvim", opts = {}, lazy = false},
+    {
+      "mrcjkb/rustaceanvim",
+      version = "^4", -- Recommended
+      lazy = false -- This plugin is already lazy
+    },
     "nvim-tree/nvim-tree.lua",
     "tanvirtin/monokai.nvim",
     "mhartington/formatter.nvim",
@@ -58,3 +64,4 @@ require("plugin-configs.treesitter")
 require("plugin-configs.telescope")
 require("plugin-configs.ibl")
 require("plugin-configs.comment")
+require("plugin-configs.rustaceanvim")
