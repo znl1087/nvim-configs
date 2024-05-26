@@ -12,7 +12,7 @@ require("nvim-tree").setup(
       sorter = "case_sensitive"
     },
     view = {
-      width = 30
+      width = 40
     },
     renderer = {
       group_empty = true
@@ -20,8 +20,12 @@ require("nvim-tree").setup(
     filters = {
       dotfiles = true
     },
+    diagnostics = {
+      enable = true,
+      show_on_dirs = true
+    },
     sync_root_with_cwd = true,
-    respect_buf_cwd = true,
+    respect_buf_cwd = false,
     update_focused_file = {
       enable = true,
       update_root = true

@@ -22,7 +22,7 @@ require("lazy").setup(
     {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
     {"akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons"},
     {"ibhagwan/fzf-lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
-    {"nvimdev/dashboard-nvim", event = "VimEnter", dependencies = {{"nvim-tree/nvim-web-devicons"}}},
+    -- {"nvimdev/dashboard-nvim", event = "VimEnter", dependencies = {{"nvim-tree/nvim-web-devicons"}}},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = {"nvim-lua/plenary.nvim"}},
     {"smartpde/telescope-recent-files"},
@@ -32,6 +32,13 @@ require("lazy").setup(
       "mrcjkb/rustaceanvim",
       version = "^4", -- Recommended
       lazy = false -- This plugin is already lazy
+    },
+    {
+      "startup-nvim/startup.nvim",
+      requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+      config = function()
+        require "startup".setup({theme = "startify"})
+      end
     },
     "nvim-tree/nvim-tree.lua",
     "tanvirtin/monokai.nvim",
@@ -59,7 +66,7 @@ require("plugin-configs.gitsigns")
 require("plugin-configs.fzf-lua")
 require("plugin-configs.project")
 require("plugin-configs.lualine")
-require("plugin-configs.dashboard-nvim")
+-- require("plugin-configs.dashboard-nvim")
 require("plugin-configs.treesitter")
 require("plugin-configs.telescope")
 require("plugin-configs.ibl")
