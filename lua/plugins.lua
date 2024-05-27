@@ -54,7 +54,7 @@ require("lazy").setup(
     "github/copilot.vim",
     "nvim-tree/nvim-web-devicons",
     "lewis6991/gitsigns.nvim",
-    "pocco81/auto-save.nvim",
+    -- "pocco81/auto-save.nvim",
     "ggandor/leap.nvim",
     "ahmedkhalf/project.nvim",
     "nvim-lua/plenary.nvim",
@@ -62,7 +62,7 @@ require("lazy").setup(
     "tpope/vim-fugitive"
   }
 )
-require("auto-save").setup()
+-- require("auto-save").setup()
 require("plugin-configs.nvim-tree")
 require("plugin-configs.formatter-nvim")
 require("plugin-configs.coc")
