@@ -1,6 +1,6 @@
 vim.g.rustaceanvim = {
-  tools = {
-    executor = "toggleterm",
-    test_executor = "toggleterm",
-  }
+    tools = {
+        executor = "toggleterm",
+        test_executor = "toggleterm",
+    }
 }

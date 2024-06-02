@@ -17,6 +17,10 @@ local on_attach = function(client, bufnr)
     )
 end
 
+lspconfig.vimls.setup {
+    on_attach = on_attach
+}
+
 lspconfig.lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
