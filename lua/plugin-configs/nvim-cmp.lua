@@ -30,14 +30,14 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             -- Hint: if the completion menu is visible select next one
             if cmp.visible() then
-                cmp.select_next_item()
+                cmp.confirm({ select = true })
             else
                 fallback()
             end
         end, { "i", "s" }), -- i - insert mode; s - select mode
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
-                cmp.select_prev_item()
+                cmp.complete()
             elseif luasnip.jumpable( -1) then
                 luasnip.jump( -1)
             else
@@ -53,7 +53,7 @@ cmp.setup({
       -- kind: single letter indicating the type of completion
       -- abbr: abbreviation of "word"; when not empty it is used in the menu instead of "word"
       -- menu: extra text for the popup menu, displayed after "word" or "abbr"
-      fields = { 'abbr', 'menu' },
+      fields = { 'abbr', 'menu', 'kind' },
 
       -- customize the appearance of the completion menu
       format = function(entry, vim_item)
