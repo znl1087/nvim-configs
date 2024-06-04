@@ -26,6 +26,7 @@ require("lazy").setup(
         { "nvimdev/dashboard-nvim",              event = "VimEnter",                              dependencies = { { "nvim-tree/nvim-web-devicons" } } },
         { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate" },
         { "nvim-telescope/telescope.nvim",       tag = "0.1.6",                                   dependencies = { "nvim-lua/plenary.nvim" } },
+        "nvim-telescope/telescope-ui-select.nvim",
         { "smartpde/telescope-recent-files" },
         { "nvim-lualine/lualine.nvim",           dependencies = { "nvim-tree/nvim-web-devicons" } },
         { "numToStr/Comment.nvim",               opts = {},                                       lazy = false },
@@ -33,6 +34,18 @@ require("lazy").setup(
             "mrcjkb/rustaceanvim",
             version = "^4", -- Recommended
             lazy = false    -- This plugin is already lazy
+        },
+        {
+            "ziontee113/icon-picker.nvim",
+            config = function()
+                require("icon-picker").setup({ disable_legacy_commands = true })
+
+                local opts = { noremap = true, silent = true }
+
+                vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
+                vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+                vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
+            end
         },
         {
             "folke/trouble.nvim",

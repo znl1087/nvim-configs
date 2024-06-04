@@ -17,9 +17,9 @@ local on_attach = function(client, bufnr)
     )
 end
 local signs = {
-    Error = "⊗ ",
+    Error = " ",
     Warn = "⚠ ",
-    Hint = "ℹ️",
+    Hint = " ",
     Infor = " "
 }
 
