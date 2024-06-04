@@ -4,9 +4,20 @@ set mouse=a
 " Set Editor Font
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
-    GuiFont JetBrainsMono NFM:h12
+    " if windows
+    if has('win32') || has('win64')
+        GuiFont! JetBrainsMono NFM:h12
+        " if mac
+    else
+        GuiFont! JetBrainsMono Nerd Font Mono:h14
+    endif
 else
-  set guifont=JetBrainsMono\ NFM:h12
+    if has('win32') || has('win64')
+        set guifont=JetBrainsMono\ NFM:h12
+        " if mac
+    else
+        set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h14
+    endif
 endif
 
 " Disable GUI Tabline

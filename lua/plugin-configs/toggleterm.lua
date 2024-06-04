@@ -2,25 +2,34 @@ require("toggleterm").setup {}
 local Terminal = require("toggleterm.terminal").Terminal
 local term_table = {}
 
-function _powershell_toggle()
--- 获取当前目录
-  local cwd = vim.fn.getcwd()
+function Powershell_toggle()
+    -- 获取当前目录
+    local cwd = vim.fn.getcwd()
 
-  -- 检查是否已经有一个终端在当前目录下运行
-  if term_table[cwd] then
-    term_table[cwd]:toggle()
-  else
-    -- 如果没有找到打开的PowerShell终端，则创建一个新的
-    local Terminal = require('toggleterm.terminal').Terminal
-    local powershell = Terminal:new({ cmd="powershell", dir = cwd, hidden = true, direction="float" })
-    powershell:toggle()
-    -- 将新的终端实例存储在表中
-    term_table[cwd] = powershell
-  end
+    -- 检查是否已经有一个终端在当前目录下运行
+    if term_table[cwd] then
+        term_table[cwd]:toggle()
+    else
+        -- 如果没有找到打开的PowerShell终端，则创建一个新的
+        local os_name = vim.uv.os_uname().sysname
+
+        if os_name == "Windows" then
+            local powershell = Terminal:new({ cmd = "powershell", dir = cwd, hidden = true, direction = "float" })
+            powershell:toggle()
+            -- 将新的终端实例存储在表中
+            term_table[cwd] = powershell
+            return
+        end
+
+        local powershell = Terminal:new({ cmd = "zsh", dir = cwd, hidden = true, direction = "float" })
+        powershell:toggle()
+        -- 将新的终端实例存储在表中
+        term_table[cwd] = powershell
+    end
 end
 
-vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua _powershell_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<leader>ttt", "<cmd>lua _powershell_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua Powershell_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<leader>ttt", "<cmd>lua Powershell_toggle()<CR>", { noremap = true, silent = true })
 
 -- function _G.set_terminal_keymaps()
 --   local opts = {buffer = 0}
