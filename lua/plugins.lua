@@ -123,6 +123,7 @@ require("lazy").setup(
         "nvim-lua/lsp-status.nvim",
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
+        "petertriho/nvim-scrollbar",
         "tpope/vim-fugitive"
     }
 )
@@ -146,3 +147,4 @@ require("plugin-configs.rustaceanvim")
 require("plugin-configs.nvim-cmp")
 require("plugin-configs.mason")
 require("plugin-configs.nvim-lspconfigs")
+require("plugin-configs.scroll-bar")

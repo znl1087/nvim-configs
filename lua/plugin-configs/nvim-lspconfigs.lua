@@ -16,6 +16,17 @@ local on_attach = function(client, bufnr)
         opts
     )
 end
+local signs = {
+    Error = "⊗ ",
+    Warn = "⚠ ",
+    Hint = "ℹ️",
+    Infor = " "
+}
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 lspconfig.vimls.setup {
     on_attach = on_attach
