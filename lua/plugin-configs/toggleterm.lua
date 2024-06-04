@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 require("toggleterm").setup {}
 local Terminal = require("toggleterm.terminal").Terminal
 local term_table = {}
@@ -13,7 +14,7 @@ function Powershell_toggle()
         -- 如果没有找到打开的PowerShell终端，则创建一个新的
         local os_name = vim.uv.os_uname().sysname
 
-        if os_name == "Windows" then
+        if string.find(os_name, "Windows") then
             local powershell = Terminal:new({ cmd = "powershell", dir = cwd, hidden = true, direction = "float" })
             powershell:toggle()
             -- 将新的终端实例存储在表中
