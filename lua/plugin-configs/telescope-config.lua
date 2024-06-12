@@ -33,6 +33,9 @@ require("telescope").setup({
 require("telescope").load_extension("recent_files")
 require("telescope").load_extension("ui-select")
 vim.keymap.set("n", "<leader>rf", ":Telescope oldfiles<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sa", ":Telescope live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sf", ":Telescope find_files<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sb", ":Telescope buffers<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>pj", ":Telescope projects<CR>", { silent = true })
 vim.keymap.set("n", "<space>aa",
     function()
