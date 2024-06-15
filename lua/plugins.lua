@@ -50,6 +50,10 @@ require("lazy").setup(
             dependencies = { "nvim-lua/plenary.nvim" }
         },
         {
+            "kevinhwang91/nvim-ufo",
+            dependencies = { "kevinhwang91/promise-async" }
+        },
+        {
             "nvim-lualine/lualine.nvim",
             dependencies = { "nvim-tree/nvim-web-devicons" }
         },
@@ -194,3 +198,4 @@ require("plugin-configs.nvim-cmp")
 require("plugin-configs.mason")
 require("plugin-configs.nvim-lspconfigs")
 require("plugin-configs.scroll-bar")
+require("plugin-configs.ufo")
