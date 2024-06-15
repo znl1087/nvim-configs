@@ -139,6 +139,7 @@ require("lazy").setup(
         "petertriho/nvim-scrollbar",
         "chaoren/vim-wordmotion",
         "sindrets/diffview.nvim",
+        "sitiom/nvim-numbertoggle",
         "tpope/vim-fugitive"
     }
 )
