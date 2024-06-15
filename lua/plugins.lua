@@ -19,17 +19,47 @@ vim.g.mapleader = "," -- Make sure to set `mapleader` before lazy so your mappin
 require("lazy").setup(
     {
         -- {"neoclide/coc.nvim", branch = "release"},
-        { "akinsho/toggleterm.nvim",             version = "*",                                   config = true },
-        { "lukas-reineke/indent-blankline.nvim", main = "ibl",                                    opts = {} },
-        { "akinsho/bufferline.nvim",             version = "*",                                   dependencies = "nvim-tree/nvim-web-devicons" },
+        {
+            "akinsho/toggleterm.nvim",
+            version = "*",
+            config = true
+        },
+        {
+            "lukas-reineke/indent-blankline.nvim",
+            main = "ibl",
+            opts = {}
+        },
+        {
+            "akinsho/bufferline.nvim",
+            version = "*",
+            dependencies = "nvim-tree/nvim-web-devicons"
+        },
         -- {"ibhagwan/fzf-lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
-        { "nvimdev/dashboard-nvim",              event = "VimEnter",                              dependencies = { { "nvim-tree/nvim-web-devicons" } } },
-        { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate" },
-        { "nvim-telescope/telescope.nvim",       tag = "0.1.6",                                   dependencies = { "nvim-lua/plenary.nvim" } },
+        {
+            "nvimdev/dashboard-nvim",
+            event = "VimEnter",
+            dependencies = { { "nvim-tree/nvim-web-devicons" } }
+        },
+        {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate"
+        },
+        {
+            "nvim-telescope/telescope.nvim",
+            tag = "0.1.6",
+            dependencies = { "nvim-lua/plenary.nvim" }
+        },
+        {
+            "nvim-lualine/lualine.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" }
+        },
         "nvim-telescope/telescope-ui-select.nvim",
         { "smartpde/telescope-recent-files" },
-        { "nvim-lualine/lualine.nvim",           dependencies = { "nvim-tree/nvim-web-devicons" } },
-        { "numToStr/Comment.nvim",               opts = {},                                       lazy = false },
+        {
+            "numToStr/Comment.nvim",
+            opts = {},
+            lazy = false
+        },
         {
             "mrcjkb/rustaceanvim",
             version = "^4", -- Recommended
