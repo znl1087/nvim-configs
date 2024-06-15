@@ -137,6 +137,7 @@ require("lazy").setup(
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
         "petertriho/nvim-scrollbar",
+        "chaoren/vim-wordmotion",
         "tpope/vim-fugitive"
     }
 )
