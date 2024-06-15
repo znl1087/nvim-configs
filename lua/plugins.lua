@@ -138,6 +138,7 @@ require("lazy").setup(
         "neovim/nvim-lspconfig",
         "petertriho/nvim-scrollbar",
         "chaoren/vim-wordmotion",
+        "sindrets/diffview.nvim",
         "tpope/vim-fugitive"
     }
 )
