@@ -141,11 +141,15 @@ require("lazy").setup(
                 "hrsh7th/cmp-buffer",   -- buffer auto-completion
                 "hrsh7th/cmp-path",     -- path auto-completion
                 "hrsh7th/cmp-cmdline",  -- cmdline auto-completion
+                "saadparwaiz1/cmp_luasnip",
             },
         },
         {
             "L3MON4D3/LuaSnip",
             version = "v2.*",
+            dependencies = {
+                "rafamadriz/friendly-snippets",
+            },
         },
         "MunifTanjim/nui.nvim",
         -- {
@@ -199,3 +203,4 @@ require("plugin-configs.mason")
 require("plugin-configs.nvim-lspconfigs")
 require("plugin-configs.scroll-bar")
 require("plugin-configs.ufo")
+require("plugin-configs.luasnip")
