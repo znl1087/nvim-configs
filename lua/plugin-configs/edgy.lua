@@ -15,7 +15,13 @@ require("edgy").setup({
         {
             title = "Nvim Tree",
             ft = "NvimTree",
-            size = { height = 1 },
+            size = { height = 0.5 },
+        },
+    },
+    right = {
+        {
+            title = "Fugitive",
+            ft = "fugitive",
         },
     }
 })
