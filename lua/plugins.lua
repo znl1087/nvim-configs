@@ -74,7 +74,10 @@ require("lazy").setup(
                 end
             end,
         },
-        {"ibhagwan/fzf-lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
+        {
+            "ibhagwan/fzf-lua",
+            dependencies = { "nvim-tree/nvim-web-devicons" }
+        },
         {
             "nvimdev/dashboard-nvim",
             event = "VimEnter",
