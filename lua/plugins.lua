@@ -46,9 +46,35 @@ require("lazy").setup(
         {
             "akinsho/bufferline.nvim",
             version = "*",
-            dependencies = "nvim-tree/nvim-web-devicons"
+            dependencies = "nvim-tree/nvim-web-devicons",
+            opts = function()
+                local Offset = require("bufferline.offset")
+                if not Offset.edgy then
+                    local old_get = Offset.get
+                    Offset.get = function()
+                        if package.loaded.edgy then
+                            local layout = require("edgy.config").layout
+                            local ret = { left = "", left_size = 0, right = "", right_size = 0 }
+                            for _, pos in ipairs({ "left", "right" }) do
+                                local sb = layout[pos]
+                                if sb and #sb.wins > 0 then
+                                    local title = " Sidebar" .. string.rep(" ", sb.bounds.width - 8)
+                                    ret[pos] = "%#EdgyTitle#" .. title .. "%*" .. "%#WinSeparator#│%*"
+                                    ret[pos .. "_size"] = sb.bounds.width
+                                end
+                            end
+                            ret.total_size = ret.left_size + ret.right_size
+                            if ret.total_size > 0 then
+                                return ret
+                            end
+                        end
+                        return old_get()
+                    end
+                    Offset.edgy = true
+                end
+            end,
         },
-        -- {"ibhagwan/fzf-lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
+        {"ibhagwan/fzf-lua", dependencies = {"nvim-tree/nvim-web-devicons"}},
         {
             "nvimdev/dashboard-nvim",
             event = "VimEnter",
@@ -210,7 +236,7 @@ require("plugin-configs.toggleterm")
 require("plugin-configs.leap")
 require("plugin-configs.bufferline")
 require("plugin-configs.gitsigns")
--- require("plugin-configs.fzf-lua")
+require("plugin-configs.fzf-lua")
 require("plugin-configs.project")
 require("plugin-configs.lualine")
 require("plugin-configs.dashboard-nvim")
