@@ -36,6 +36,10 @@ lspconfig.pyright.setup {
     on_attach = on_attach
 }
 
+lspconfig.tsserver.setup {
+    on_attach = on_attach
+}
+
 lspconfig.lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
