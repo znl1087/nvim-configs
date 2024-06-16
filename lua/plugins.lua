@@ -20,6 +20,16 @@ require("lazy").setup(
     {
         -- {"neoclide/coc.nvim", branch = "release"},
         {
+            "jackMort/ChatGPT.nvim",
+            event = "VeryLazy",
+            dependencies = {
+                "MunifTanjim/nui.nvim",
+                "nvim-lua/plenary.nvim",
+                "folke/trouble.nvim",
+                "nvim-telescope/telescope.nvim"
+            }
+        },
+        {
             "akinsho/toggleterm.nvim",
             version = "*",
             config = true
@@ -255,3 +265,4 @@ require("plugin-configs.scroll-bar")
 require("plugin-configs.ufo")
 require("plugin-configs.luasnip")
 require("plugin-configs.edgy")
+require("plugin-configs.chatgpt")
