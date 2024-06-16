@@ -54,6 +54,14 @@ require("lazy").setup(
             dependencies = { "kevinhwang91/promise-async" }
         },
         {
+            "folke/edgy.nvim",
+            event = "VeryLazy",
+            init = function()
+                vim.opt.laststatus = 3
+                vim.opt.splitkeep = "screen"
+            end,
+        },
+        {
             "nvim-lualine/lualine.nvim",
             dependencies = { "nvim-tree/nvim-web-devicons" }
         },
@@ -204,3 +212,4 @@ require("plugin-configs.nvim-lspconfigs")
 require("plugin-configs.scroll-bar")
 require("plugin-configs.ufo")
 require("plugin-configs.luasnip")
+require("plugin-configs.edgy")
