@@ -25,6 +25,20 @@ require("lazy").setup(
             config = true
         },
         {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+            config = function()
+                require("copilot").setup({})
+            end,
+        },
+        {
+            "zbirenbaum/copilot-cmp",
+            config = function()
+                require("copilot_cmp").setup()
+            end
+        },
+        {
             "lukas-reineke/indent-blankline.nvim",
             main = "ibl",
             opts = {}
@@ -171,7 +185,6 @@ require("lazy").setup(
         "tanvirtin/monokai.nvim",
         "mhartington/formatter.nvim",
         "equalsraf/neovim-gui-shim",
-        "github/copilot.vim",
         "nvim-tree/nvim-web-devicons",
         "lewis6991/gitsigns.nvim",
         -- "pocco81/auto-save.nvim",
