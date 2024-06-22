@@ -9,19 +9,27 @@ require("edgy").setup({
                 return vim.api.nvim_win_get_config(win).relative == ""
             end,
         },
+        {
+            title = "GitCommit",
+            ft = "gitcommit",
+        },
     },
     left = {
         -- Neo-tree filesystem always takes half the screen height
         {
             title = "Nvim Tree",
             ft = "NvimTree",
-            size = { height = 0.5 },
+            size = { width = 0.15 },
         },
     },
     right = {
         {
             title = "Fugitive",
             ft = "fugitive",
+        },
+        {
+            title = "GitCommit",
+            ft = "gitcommit",
         },
     }
 })
