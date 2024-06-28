@@ -29,8 +29,8 @@ function Powershell_toggle()
     end
 end
 
-vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua Powershell_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<leader>ttt", "<cmd>lua Powershell_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua Powershell_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<leader>tt", "<cmd>lua Powershell_toggle()<CR>", { noremap = true, silent = true })
 
 -- function _G.set_terminal_keymaps()
 --   local opts = {buffer = 0}
