@@ -18,3 +18,4 @@ end
 
 -- 创建一个命令来调用上述函数
 vim.api.nvim_create_user_command('FormatJson', FormatJsonWithPython, { range = true })
+vim.api.nvim_set_keymap('n', '<leader>rt', ':RustLsp testables<CR>', { noremap = true, silent = true })
